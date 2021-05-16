@@ -4,9 +4,9 @@ programa {
     
 	funcao inicio() {
 	    
-	    /*Crie uma aplicação, que gere aleatoriamente apostas (surpresinha) 
+	    /*Crie uma aplicaÃ§Ã£o, que gere aleatoriamente apostas (surpresinha) 
 	    para os principais jogos de loteria do Brasil (Mega-Sena, Quina, 
-	    Lotomania e Lotofácil).*/
+	    Lotomania e LotofÃ¡cil).*/
 		
 		inteiro tipoAposta 
 		inteiro vezesJogadas
@@ -15,15 +15,16 @@ programa {
 		escreva("[1] Mega-sena                    \n")
 		escreva("[2] Quina.                       \n")
 		escreva("[3] Loto-mania                   \n")
-		escreva("[4] Loto-fácil                   \n")
+		escreva("[4] Loto-fÃ¡cil                   \n")
 		escreva("---------------------------------\n")
-		escreva("Digite o número correspondente do tipo de aposta que você quer jogar: ")
+		escreva("Digite o nÃºmero correspondente do tipo de aposta que vocÃª quer jogar: ")
 		leia(tipoAposta)
-		escreva("Quantas vezes você deseja jogar a mesma aposta? ")
+		escreva("Quantas vezes vocÃª deseja jogar a mesma aposta? ")
 		leia(vezesJogadas)
 
-        inteiro quantidadeDezenas
-        inteiro numerosGerados[50]
+		inteiro quantidadeDezenas
+		inteiro numerosGerados[50]
+		
 		escolha(tipoAposta){
 		    
 		    caso 1: 
@@ -32,7 +33,7 @@ programa {
     		leia(quantidadeDezenas)
     		
     		enquanto(quantidadeDezenas < 6 ou quantidadeDezenas > 15){
-    		    escreva("Na Mega-cena só podem ser apostados de 6 a 15 dezenas, tente novamente:")
+    		    escreva("Na Mega-cena sÃ³ podem ser apostados de 6 a 15 dezenas, tente novamente:")
     		    leia(quantidadeDezenas)
     		}
     		
@@ -70,7 +71,7 @@ programa {
     		leia(quantidadeDezenas)
     		
     		enquanto(quantidadeDezenas < 5 ou quantidadeDezenas > 15){
-    		    escreva("Na Quina só podem ser apostados de 5 a 15 dezenas, tente novamente:")
+    		    escreva("Na Quina sÃ³ podem ser apostados de 5 a 15 dezenas, tente novamente:")
     		    leia(quantidadeDezenas)
     		}
     		
@@ -132,7 +133,7 @@ programa {
 	}
 	
 	funcao gasto(real valorDezenas[], inteiro quantidadeDezenas, inteiro vezesJogadas){
-	    escreva("Você gastou o total de R$", valorDezenas[quantidadeDezenas]* vezesJogadas)
+	    escreva("VocÃª gastou o total de R$", valorDezenas[quantidadeDezenas]* vezesJogadas)
 	}
 	
 	funcao ordenar (inteiro vetor[], inteiro tamanho){
@@ -151,7 +152,5 @@ programa {
 		v[a] = v[b]
 		v[b] = c
 	}
-	
-
 
 }
