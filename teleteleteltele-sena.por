@@ -22,9 +22,13 @@ programa {
 		escreva("Quantas vezes você deseja jogar a mesma aposta? ")
 		leia(vezesJogadas)
 
+//********************************************************************************************************************************  	
+
 		inteiro quantidadeDezenas
 		inteiro numerosGerados[50]
 		
+//********************************************************************************************************************************  	
+
 		escolha(tipoAposta){
 		    
 		    caso 1: 
@@ -65,6 +69,8 @@ programa {
     		
     		pare
     		
+//********************************************************************************************************************************  	
+    		
     		caso 2:
 		
     		escreva("Quantas dezenas vc quer apostar? (5 a 15 dezenas) \n")
@@ -104,9 +110,71 @@ programa {
     		
     		pare
     		
+//********************************************************************************************************************************  	
+    		
+    		caso 3: 
+		
+    		escreva("Na lotomania o número fixo de dezenas é 50 ")
+    		quantidadeDezenas = 50
+    		
+    		limpa()
+    		
+    		para(inteiro c = 0; c< vezesJogadas; c++){
+                gerarNumeros(numerosGerados, quantidadeDezenas, 1, 100)
+        		ordenar(numerosGerados, quantidadeDezenas)
+        		para(inteiro i = 0; i< quantidadeDezenas; i++){
+        		    escreva(numerosGerados[i], " ")
+    	    	}
+    	    	escreva("\n\n")
+    		}
+    		
+    		real valorLotomania = 2.50
+		   
+    	    escreva("Você gastou o total de R$", valorLotomania * vezesJogadas,"\n")
+    		
+    		pare
+    		
+//********************************************************************************************************************************  	
+
+    		caso 4:
+		
+    		escreva("Quantas dezenas vc quer apostar? (15 a 20 dezenas) \n")
+    		leia(quantidadeDezenas)
+    		
+    		enquanto(quantidadeDezenas < 15 ou quantidadeDezenas > 20){
+    		    escreva("Na Loto-fácil só podem ser apostados de 15 a 20 dezenas, tente novamente:")
+    		    leia(quantidadeDezenas)
+    		}
+    		
+    		limpa()
+    		
+    		para(inteiro c = 0; c< vezesJogadas; c++){
+                gerarNumeros(numerosGerados, quantidadeDezenas, 1, 25)
+        		ordenar(numerosGerados, quantidadeDezenas)
+        		para(inteiro i = 0; i< quantidadeDezenas; i++){
+        		    escreva(numerosGerados[i], " ")
+    	    	}
+    	    	escreva("\n\n")
+    		}
+    		
+    		real valorDezenasLotofacil[21]
+		    
+		    valorDezenasLotofacil[15]  = 2.50
+		    valorDezenasLotofacil[16]  = 40.00
+		    valorDezenasLotofacil[17]  = 2040.00
+		    valorDezenasLotofacil[18]  = 2040.00
+		    valorDezenasLotofacil[19]  = 9690.00
+		    valorDezenasLotofacil[20]  = 38760.00
+    		    
+    		gasto(valorDezenasLotofacil, quantidadeDezenas, vezesJogadas)
+    		
+    		pare
+	
 		}
 	}
 	
+//********************************************************************************************************************************  
+
 	funcao gerarNumeros(inteiro vetor[], inteiro quantidadeDezenas, inteiro valorInicial, inteiro valorFinal){
 	    para(inteiro i = 0; i< quantidadeDezenas; i++){
 		    
@@ -133,7 +201,7 @@ programa {
 	}
 	
 	funcao gasto(real valorDezenas[], inteiro quantidadeDezenas, inteiro vezesJogadas){
-	    escreva("Você gastou o total de R$", valorDezenas[quantidadeDezenas]* vezesJogadas)
+	    escreva("Você gastou o total de R$", valorDezenas[quantidadeDezenas]* vezesJogadas, "\n")
 	}
 	
 	funcao ordenar (inteiro vetor[], inteiro tamanho){
@@ -152,5 +220,7 @@ programa {
 		v[a] = v[b]
 		v[b] = c
 	}
+	
+//********************************************************************************************************************************  	
 
 }
